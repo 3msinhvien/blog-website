@@ -1,0 +1,20 @@
+{
+  "setupTasks": [
+    {
+      "name": "Install all dependencies",
+      "command": "npm install --prefix backend && npm install --prefix frontend"
+    }
+  ],
+  "tasks": {
+    "start-frontend": {
+      "name": "Start Frontend (React)",
+      "command": "cd frontend && npm start",
+      "runAtStart": true
+    },
+    "start-backend": {
+      "name": "Start Backend (Express)",
+      "command": "cd backend && npm start",
+      "runAtStart": true
+    }
+  }
+}

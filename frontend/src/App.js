@@ -43,33 +43,27 @@ function App() {
 
   function Home() {
     return (
-      <div className="container">
-        <main>
-          <h1>Do Tung's Blog</h1>
-          <p>Welcome to my blog! Here you'll find interesting articles and thoughts on various topics.</p>
-        </main>
+      <div>
+        <h1>Do Tung's Blog</h1>
+        <p>Welcome to my Blog</p>
       </div>
     )
   }
 
   function About() {
     return (
-      <div className="container">
-        <main>
-          <h2>About me</h2>
-          <p>This is the about page where you can learn more about me and my interests.</p>
-        </main>
+      <div>
+        <h2>About me</h2>
+        <p>This is the about page.</p>
       </div>
     )
   }
 
   function NoMatch() {
     return (
-      <div className="container">
-        <main className="error-page">
-          <h2>404: Page Not Found</h2>
-          <p>The page you're looking for does not exist.</p>
-        </main>
+      <div>
+        <h2>404: Page Not Found</h2>
+        <p>The page you're looking for does not exist.</p>
       </div>
     )
   }
@@ -79,11 +73,9 @@ function App() {
 
   function Posts() {
     return (
-      <div className="container">
-        <main>
-          <h2>Blog Posts</h2>
-          <Outlet />
-        </main>
+      <div>
+        <h2>Blog</h2>
+        <Outlet />
       </div>
     )
   }
@@ -95,7 +87,7 @@ function App() {
           ([slug, {title}]) => (
             <li key={slug}>
               <Link to={`/post/${slug}`}>
-                <h3>{title}</h3>
+              <h3>{title}</h3>
               </Link>
             </li>
           )
@@ -108,34 +100,28 @@ function App() {
     const {slug} = useParams();
     const post = blog[slug];
     if (!post) {
-      return (
-        <div className="container">
-          <main>
-            <div>Post not found</div>
-          </main>
-        </div>
-      );
+      return <div>Post not found</div>;
     }
     const {title, content} = post;
     return (
-      <div className="container">
-        <main>
-          <div className="post-detail">
-            <h3>{title}</h3>
-            <p>{content}</p>
-          </div>
-        </main>
+      <div>
+        <h3>{title}</h3>
+        <p>{content}</p>
       </div>
     )
   }
   return (
     <Router>
       <nav>
-        <div className="container">
-          <Link to='/'>Home</Link>
-          <Link to='/about'>About</Link>
-          <Link to='/post'>Blog</Link>
-        </div>
+        <Link to='/'>
+          Home
+        </Link>
+        <Link to='/about'>
+          About
+        </Link>
+        <Link to='/post'>
+          Blog
+        </Link>
       </nav>
       
       <Routes>
