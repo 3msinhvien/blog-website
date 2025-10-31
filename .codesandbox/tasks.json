@@ -1,8 +1,8 @@
 {
   "setupTasks": [
     {
-      "name": "Install all dependencies",
-      "command": "npm install --prefix backend && npm install --prefix frontend"
+      "name": "Auto sync & install dependencies",
+      "command": "git fetch origin && git reset --hard origin/master && npm install --prefix backend && npm install --prefix frontend"
     }
   ],
   "tasks": {
