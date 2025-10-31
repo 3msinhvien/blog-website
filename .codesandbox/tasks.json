@@ -8,8 +8,9 @@
   "tasks": {
     "start-frontend": {
       "name": "Start frontend (React)",
-      "command": "cd frontend && PORT=2222 npm start",
-      "runAtStart": true
+      "command": "cd frontend && PORT=3000 npm start",
+      "runAtStart": true,
+      "previewPort": 3000
     },
     "start-backend": {
       "name": "Start backend (Express)",
