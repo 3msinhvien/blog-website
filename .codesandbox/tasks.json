@@ -1,14 +1,20 @@
 {
-    "tasks": {
-        "start-frontend": {
-            "name": "Start frontend (React)",
-            "command": "cd frontend && PORT=2222 npm start",
-            "runAtStart": true
-        },
-        "start-backend": {
-            "name": "Start backend (Express)",
-            "command": "cd backend && PORT=8080 npm start",
-            "runAtStart": true
-        }
+  "setupTasks": [
+    {
+      "name": "Install all dependencies",
+      "command": "npm install --prefix backend && npm install --prefix frontend"
     }
+  ],
+  "tasks": {
+    "start-frontend": {
+      "name": "Start frontend (React)",
+      "command": "cd frontend && PORT=2222 npm start",
+      "runAtStart": true
+    },
+    "start-backend": {
+      "name": "Start backend (Express)",
+      "command": "cd backend && PORT=8080 npm start",
+      "runAtStart": true
+    }
+  }
 }
